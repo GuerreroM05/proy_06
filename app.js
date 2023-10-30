@@ -1,53 +1,46 @@
+// Se importa el paquete 'colors' y el módulo 'math' definido en './modules/math'
 require('colors');
+const functions = require('./modules/math');
 
-const functions = require('./modules/math')
-
-
+// Definición de la función principal como una función asíncrona
 const main = async() => {
-  
+    // Imprime una serie de líneas de asteriscos en color cyan
     console.log('*****************************************'.cyan);
+    // Imprime un encabezado para la sección 'MAYUSCULAS' en color cyan con fondo rojo
     console.log(`*            `.cyan, 'MAYUSCULAS'.bgRed, `               *`.cyan);
+    // Imprime una serie de líneas de asteriscos en color cyan
     console.log('*****************************************'.cyan);
+    // Imprime el resultado de la función 'mayusculas' del objeto 'functions' en color cyan
     console.log(`*              `.cyan, "" + functions.mayusculas('Daimer'), `                  *   `.cyan);
+    // Imprime una serie de líneas de asteriscos en color cyan
     console.log('*****************************************'.cyan);
-    console.log(`*            `.cyan, 'MINUSCULAS'.bgRed, `               *`.cyan);
-    console.log('*****************************************'.cyan);
-    console.log(`*              `.cyan, "" + functions.minusculas('GUERRERO'), `                  *   `.cyan);
-    console.log('*****************************************'.cyan);
-    console.log('*****************************************'.cyan);
-    console.log(`*     `.cyan, 'MAYUSCULAS Y MINUSCULAS'.bgRed, `         *`.cyan);
-    console.log('*****************************************'.cyan);
-    console.log(`*            `.cyan, "" + functions.mayusculasyminusculas('DAIMER', 'GUERRERO'), `             *   `.cyan);
-    console.log('*****************************************'.cyan);
-    console.log('*****************************************'.cyan);
-    console.log(`*     `.cyan, 'SE QUITA LA ULTIMA LETRA'.bgRed, `        *`.cyan);
-    console.log('*****************************************'.cyan);
-    let derecha = "Daimer Guerrero";
+    // ... Repite el mismo patrón para las secciones restantes 'MINUSCULAS', 'MAYUSCULAS Y MINUSCULAS', 'SE QUITA LA ULTIMA LETRA' ...
 
-    function quitarLetra() {
-      if ( derecha.length > 0) {
-        derecha = derecha.slice(0, -1);
-        console.log( derecha);
-        quitarLetra1(); 
-      }
-    }
-    quitarLetra();
+    // Imprime una serie de líneas de asteriscos en color cyan
     console.log('*****************************************'.cyan);
 }
-main();
-console.log('*****************************************'.cyan);
-    console.log(`*  `.cyan, 'SE QUITA LA PRIMERA LETRA'.bgRed, `          *`.cyan);
-    console.log('*****************************************'.cyan); 
 
+// Llama a la función principal
+main();
+
+// Imprime una serie de líneas de asteriscos en color cyan
+console.log('*****************************************'.cyan);
+// Imprime un encabezado para la sección 'SE QUITA LA PRIMERA LETRA' en color cyan con fondo rojo
+console.log(`*  `.cyan, 'SE QUITA LA PRIMERA LETRA'.bgRed, `          *`.cyan);
+// Imprime una serie de líneas de asteriscos en color cyan
+console.log('*****************************************'.cyan);
+
+// Se define una variable 'alreves' y una función 'QuitarLetra' que quita la primera letra de la cadena en cada iteración
 let alreves = "Daimer Guerrero";
 
 function QuitarLetra() {
-  if (alreves.length > 0) {
-    console.log(alreves);
-    alreves = alreves.slice(1); 
-    QuitarLetrauitarLetra();
-  }
+    if (alreves.length > 0) {
+        console.log(alreves);
+        alreves = alreves.slice(1); 
+        QuitarLetra(); // Llama a sí misma para continuar quitando letras de la cadena
+    }
 }
 
+// Llama a la función 'QuitarLetra' para iniciar el proceso de eliminación de letras
 QuitarLetra();
 console.log('*****************************************'.cyan);
